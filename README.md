@@ -58,7 +58,7 @@ virtual instanciada na nuvem utilizando o *Digital Ocean*;
 - O estado do servidor é mantido devido ao arquivo de log implementado;
 - O tempo que uma mensagem demora para ser enviada é desprezível;
 
-## Instalações e execução do *chat on-to-one*
+## Instalações e execução do *chat one-to-one*
 
 1. Instalação do python: Este passo são somente para quem usa Linux. Caso use Windows/MAC OS consulte o site do [Python Downloads](https://www.python.org/downloads/). Abra o terminal de comando e siga os passos abaixo:
     - Instalar os pacotes necessários para instalar o python:
