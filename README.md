@@ -50,7 +50,7 @@ São utilizadas três ***threads***:
 - Múltiplos clientes acessando ao mesmo tempo;
 - O cliente não sabe como o servidor funciona;
 
-## Testes foram executados
+## Testes executados
 
 - Para realizar os testes, o servidor foi executado em uma máquina
 virtual instanciada na nuvem utilizando o *Digital Ocean*;
