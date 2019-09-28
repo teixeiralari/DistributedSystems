@@ -1,47 +1,109 @@
-# ***Reverse Shell***
+# ***Chat one-to-one***
 
 ## Descrição do projeto e suas funções
 
 ### Objetivo
 
-- O objetivo deste trabalho consiste em implementar um *reserve shell* utilizando *sockets* em python. 
-- *Sockets* são usados para enviar dados através da rede.
+O objetivo deste trabalho consiste em implementar um chat, utilizando *sockets* em python. 
+*Sockets* são usados para enviar dados através da rede.
 
-### O que é um ***Reverse Shell***?
+### Como funciona?
+#### O Cliente
+Um cliente pode receber e mandar mensagens para vários clientes, mas essas mensagens são privadas, ou seja, de cliente para cliente. O servidor é o intermediário, fica responsável por encaminhar as mensagens do remetente ao destinatário.
+Neste chat são implementados três comandos para o cliente:
+- *list*: Quando o cliente digita este comando, o servidor fica responsável por enviar ao cliente uma lista de todos os clientes conectados naquele momento;
+- *send*: Este comando serve para o cliente enviar alguma mensagem a um outro cliente. O cliente precisa digitar o email de destino e a mensagem que deseja enviar. O servidor fica responsável por enviar a mensagem;
+- *quit*: O cliente se desconecta do chat;
 
-- Um *reverse shell* (shell reverso), força uma conexão de volta ao computador
-de ataque. Nesse caso, em nosso computador de ataque, abrimos uma porta local e ficamos ouvindo à espera de uma conexão feita a partir de nosso alvo porque é mais provável que essa conexão reversa consiga passar por um firewall **(WEIDMAN, Georgia – 2014, p. 138)**.
-Em outras palavras, a máquina do invasor (que tem um IP público e pode ser acessado pela Internet) age como um servidor. Ele abre um canal de comunicação em uma porta e aguarda por conexões de entrada. A máquina da vítima atua como um cliente e inicia uma conexão com o servidor de escuta do invasor.
-- O servidor ganha acesso à máquina invadida e consegue executar comandos no *shell* (terminal, prompt).
+**Observação:** Para cada comando enviado ao servidor é necessário pressionar enter para receber a resposta. De tempos em tempos, é necessário pressionar enter para receber novas mensagens de clientes.
+#### O Servidor
+O servidor fica responsável por entender todos os comandos enviados pelo cliente.
+O servidor possui um arquivo de log, nomeado como ***log.txt***. Esse arquivo contém quatro campos:
+- ***sender***: Cliente remetente;
+- ***receiver***: Cliente destinatário;
+- ***message***: Mensagem que será enviada do cliente remetente ao cliente destinatário;
+- ***status***: 
+    - *status = "OK"*: Se a mensagem foi enviada com sucesso do cliente remetente ao cliente destinatário;
+    - *status = "Pending"*: Se a tentativa de enviar a mensagem falhou;
+
+Quando o remetente tenta enviar uma mensagem para o destinatário, existem três possibilidades:
+1. O destinatário está online, então a mensagem será entregue com sucesso;
+2. O destinatario está offline, então a mensagem ficará retida no arquivo de log com o status *Pending*. Quando o destinatário se conectar, a mensagem será enviada e o status mudará para *OK*;
+3. O destinatário não existe, então a mensagem nunca será enviada;
 
 ### O lado servidor
 
-- O servidor estará esperando por conexões o tempo inteiro e roda em um IP
+O servidor estará esperando por conexões o tempo inteiro e roda em um IP
 público.
-- Serão utilizadas duas ***threads***:
-    - ***Thread* 1**: Responsável por ouvir e aceitar conexões.
-    - ***Thread* 2**: Enviar comandos para o cliente e lidar com clientes existentes.
-- Além dos comandos existentes no *shell*, como o servidor estará conectado com múltiplos clientes, dois comandos para o servidor serão adicionados:
-    - *list*: Lista todos os clientes (vítimas) que estão atualmente conectados ao servidor.
-    - *select*: Seleciona o cliente que será atacado.
+São utilizadas três ***threads***:
+1. ***Thread* 1**: Responsável por ouvir, aceitar conexões e enviar mensagens.
+2. ***Thread* 2**: Responsável por inserir no arquivo de log as mensagens que foram enviadas ou que ainda estão aguardando para serem enviadas
+3.  ***Thread* 3**: Responsável por ler e enviar as mensagens que estão pendentes no arquivo de log; 
 
 ### O lado cliente
 
-- Conecta ao servidor e espera os comandos.
-- Múltiplos clientes acessando ao mesmo tempo.
-- O cliente não saberá que está sendo atacado.
-- Todos os dados existentes no computador do cliente atacado poderão ser acessados.
+- Conecta ao servidor e digita os comandos que deseja;
+- Múltiplos clientes acessando ao mesmo tempo;
+- O cliente não sabe como o servidor funciona;
 
-## Testes que serão executados
+## Testes foram executados
 
-- Para realizar os testes, o servidor estará sendo executado em uma máquina
-virtual instanciada na nuvem utilizando *AWS - Cloud Computing Services* ou
-*Digital Ocean*.
-- Múltiplos clientes serão conectados para testar o acesso simultâneo ao serviço descrito.
-- Será feito um script para o servidor, se necessário, ficar mandando comandos aleatóriamente para testar qualquer tipo de erro que possa acontecer e evitar que o sistema caia.
+- Para realizar os testes, o servidor foi executado em uma máquina
+virtual instanciada na nuvem utilizando o *Digital Ocean*;
+- Múltiplos clientes foram conectados para testar o acesso simultâneo ao serviço descrito;
+- O estado do servidor é mantido devido ao arquivo de log implementado;
+- O tempo que uma mensagem demora para ser enviada é desprezível;
 
-## Bibliografia
+# Instalações e executação do *chat on-to-one*
 
-- http://voudarumjeito.blogspot.com/2014/08/se-protegendo-contra-um-shell-reverso.html
-- https://tiagosouza.com/reverse-shell-cheat-sheet-bind-shell/
+1. Instalação do python: Este passo são somente para quem usa Linux. Caso use Windows/MAC OS consulte o site do [Python Downloads](https://www.python.org/downloads/). Abra o terminal de comando e siga os passos abaixo:
+    - Instalar os pacotes necessários para instalar o python:
+        ```
+        $ sudo apt update
+        $ sudo apt install software-properties-common
+        ```
+    - Adicionar o deadsnakes PPA ao *source list*:
+        ```
+        $ sudo add-apt-repository ppa:deadsnakes/ppa
+        ```
+    - Aperte *ENTER* para continuar:
+        ```
+        Output
+        Press [ENTER] to continue or Ctrl-c to cancel adding it.
+        ```
+    - Instalar o python 3.7:
+        ```
+        $ sudo apt install python3.7
+        ```
+2. Instalação da biblioteca *pandas* utilizada neste projeto:
+    - Digite no terminal o seguinte comando:
+        ```
+        $ python3 -m pip install pandas
+        ```
+3. Antes de clonar o projeto, entre na pasta, pelo terminal, onde deseja clonar este projeto, depois digite o comando abaixo:
+    ```
+    $ git clone https://github.com/teixeiralari/DistributedSystems.git
+    ```
+    
+    - Para executar o servidor, digite:
+        ```
+        $ cd Entrega1/
+        $ python server.py
+        ```
+    - Antes de executar o cliente, no arquivo *client.py*, substitua a variável *host* pelo endereço IP do servidor. Após iniciado o servidor, utilize o comando para a execução do cliente:
+        ```
+        $ python client.py
+        ``` 
+    
+
+
+## Referências
+Para implementar este projeto, o tutorial, encontrado no *link* abaixo, foi usado como referência: 
+- https://pythonprogramming.net/pickle-objects-sockets-tutorial-python-3/
+- https://pythonprogramming.net/server-chatroom-sockets-tutorial-python-3/?completed=/pickle-objects-sockets-tutorial-python-3/
+
+Instalação do python:
+- https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/
+
+
 

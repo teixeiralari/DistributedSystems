@@ -1,0 +1,11 @@
+sender;receiver;message;status
+Larissa;Igor;tchurubom?;ok
+larissa;igor;oi;OK
+igor;larissa;oi baby;OK
+carlos;princesa;oidas;OK
+larissa;igor;oi;OK
+larissa;igor;oi;OK
+larissa;igor;oi;OK
+larissa;amanda;oiasda;OK
+amanda;igor;dasdas;OK
+igor;amanda;oi amanda;OK            
