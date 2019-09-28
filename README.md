@@ -22,7 +22,7 @@ Neste chat são implementados três comandos para o cliente:
 **Observação:** Para cada comando enviado ao servidor é necessário pressionar enter para receber a resposta. De tempos em tempos, é necessário pressionar enter para receber novas mensagens de clientes.
 #### O Servidor
 O servidor fica responsável por entender todos os comandos enviados pelo cliente.
-O servidor possui um arquivo de log, nomeado como ***log.txt***. Esse arquivo contém quatro campos:
+O servidor possui um arquivo de log, nomeado como ***log.txt***. Neste arquivo é gravada todas a mensagens enviadas, independentes de terem sido entregues ou não. Nele contém quatro campos:
 - ***sender***: Cliente remetente;
 - ***receiver***: Cliente destinatário;
 - ***message***: Mensagem que será enviada do cliente remetente ao cliente destinatário;
@@ -31,9 +31,9 @@ O servidor possui um arquivo de log, nomeado como ***log.txt***. Esse arquivo co
     - *status = "Pending"*: Se a tentativa de enviar a mensagem falhou;
 
 Quando o remetente tenta enviar uma mensagem para o destinatário, existem três possibilidades:
-1. O destinatário está online, então a mensagem será entregue com sucesso;
-2. O destinatario está offline, então a mensagem ficará retida no arquivo de log com o status *Pending*. Quando o destinatário se conectar, a mensagem será enviada e o status mudará para *OK*;
-3. O destinatário não existe, então a mensagem nunca será enviada;
+1. O destinatário está online, então a mensagem será entregue com sucesso, a mensagem será gravada no arquivo de log com o status *OK*;
+2. O destinatario está offline, então a mensagem ficará gravada no arquivo de log com o status *Pending*. Quando o destinatário se conectar, a mensagem será enviada e o status mudará para *OK*;
+3. O destinatário não existe, então a mensagem nunca será enviada, ou seja, o status no arquivo de log ficará *Pending* para sempre;
 
 ### O lado servidor
 
