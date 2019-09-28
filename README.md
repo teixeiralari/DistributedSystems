@@ -60,7 +60,7 @@ virtual instanciada na nuvem utilizando o *Digital Ocean*;
 
 ## Instalações e execução do *chat one-to-one*
 
-1. Instalação do python: Este passo são somente para quem usa Linux. Caso use Windows/MAC OS consulte o site do [Python Downloads](https://www.python.org/downloads/). Abra o terminal de comando e siga os passos abaixo:
+1. Instalação do python: Estes passos são somente para quem usa Linux. Caso use Windows/MAC OS consulte o site do [Python Downloads](https://www.python.org/downloads/). Abra o terminal de comando e siga os passos abaixo:
     - Instalar os pacotes necessários para instalar o python:
         ```
         $ sudo apt update
