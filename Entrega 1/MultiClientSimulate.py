@@ -58,5 +58,5 @@ def main():
     
 
 if __name__ == "__main__":
-    threading.Thread(target=main). start()
+    threading.Thread(target=main).start()
         
