@@ -53,7 +53,7 @@ São utilizadas três ***threads***:
 ## Testes executados
 
 - Para realizar os testes, o servidor foi executado em uma máquina
-virtual instanciada na nuvem utilizando o *Digital Ocean*;
+virtual instanciada na nuvem utilizando o *AWS EC2*;
 - Múltiplos clientes foram conectados para testar o acesso simultâneo ao serviço descrito;
 - O estado do servidor é mantido devido ao arquivo de log implementado;
 - O tempo que uma mensagem demora para ser enviada é desprezível;
