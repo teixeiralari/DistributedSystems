@@ -41,16 +41,16 @@ Quando o remetente tenta enviar uma mensagem para o destinatário, existem três
 
 O servidor estará esperando por conexões o tempo inteiro e roda em um IP
 público.
-São utilizadas três ***threads***:
+- São utilizadas três ***threads***:
 1. ***Thread* 1**: Responsável por ouvir, aceitar conexões e enviar mensagens.
 2. ***Thread* 2**: Responsável por inserir no arquivo de log as mensagens que foram enviadas ou que ainda estão aguardando para serem enviadas
 3.  ***Thread* 3**: Responsável por ler e enviar as mensagens que estão pendentes no arquivo de log; 
 
 ### O lado cliente
 
-Conecta ao servidor e digita os comandos que deseja;
-Múltiplos clientes acessando ao mesmo tempo;
-O cliente não sabe como o servidor funciona;
+- Conecta ao servidor e digita os comandos que deseja;
+- Múltiplos clientes acessando ao mesmo tempo;
+- O cliente não sabe como o servidor funciona;
 São utilizadas duas ***threads***:
 1. ***Thread* 1**: Responsável receber mensagens do teclado.
 2. ***Thread* 2**: Responsável por lidar com as novas mensagens
