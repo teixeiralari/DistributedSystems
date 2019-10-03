@@ -21,7 +21,6 @@ Neste chat são implementados três comandos para o cliente:
 - *history*: Ver histórico de mensagens enviadas e recebidas;
 - *menu*: Mostrar o menu novamente;
 
-**Observação:** Para cada comando enviado ao servidor é necessário pressionar enter para receber a resposta. De tempos em tempos, é necessário pressionar enter para receber novas mensagens de clientes.
 #### O Servidor
 O servidor fica responsável por entender todos os comandos enviados pelo cliente.
 O servidor possui um arquivo de log, nomeado como ***log.txt***. Neste arquivo é gravada todas a mensagens enviadas, independentes de terem sido entregues ou não. Nele contém quatro campos:
