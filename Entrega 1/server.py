@@ -102,6 +102,13 @@ class Server():
     def append_log_file(self, sender, receiver, message, status):
         with open('log.txt', 'a') as f:
             f.write(sender + ';' + receiver + ';' + message + ';' + status + '\n')
+    
+    def message_history(self, user):
+        log_file = pd.read_csv('log.txt', sep=';')
+        sender = log_file[(log_file.sender == user)].values.tolist()
+        receiver = log_file[(log_file.receiver == user)].values.tolist()
+        
+        return sender, receiver
 
 
     def start_server(self):
@@ -197,7 +204,7 @@ class Server():
                                 header_cmd, cmd = self.format_message('send')
                                 header_server, response_server = self.format_message('Could not send your message now, user is disconnected')
                                 notified_socket.send(header_cmd + cmd + header_server + response_server)
-                                
+                          
                         else:
                             
                             header_cmd, cmd = self.format_message('send')
@@ -208,6 +215,15 @@ class Server():
                                                 email_destination["data"].decode("utf-8"),
                                                 msg_destination["data"].decode("utf-8"),
                                                 status,)).start()
+                    
+                    elif message['data'].decode('utf-8') == 'history':
+                        
+                        header_cmd, cmd = self.format_message('history')
+                        sender, receiver = self.message_history(user['data'].decode('utf-8'))
+                        sender_header, sender_message = self.format_message(sender)
+                        receiver_header, receiver_message = self.format_message(receiver)
+                        notified_socket.send(header_cmd + cmd + sender_header + sender_message +  receiver_header + receiver_message)
+                        
                 
 
             # handle some socket exceptions
