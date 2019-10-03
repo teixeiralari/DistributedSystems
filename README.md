@@ -50,9 +50,9 @@ público.
 - Conecta ao servidor e digita os comandos que deseja;
 - Múltiplos clientes acessando ao mesmo tempo;
 - O cliente não sabe como o servidor funciona;
-São utilizadas duas ***threads***:
-1. ***Thread* 1**: Responsável receber mensagens do teclado.
-2. ***Thread* 2**: Responsável por lidar com as novas mensagens
+- São utilizadas duas ***threads***:
+    1. ***Thread* 1**: Responsável receber mensagens do teclado.
+    2. ***Thread* 2**: Responsável por lidar com as novas mensagens
 
 
 ## Testes executados
