@@ -18,6 +18,8 @@ Neste chat são implementados três comandos para o cliente:
 - *list*: Quando o cliente digita este comando, o servidor fica responsável por enviar ao cliente uma lista de todos os clientes conectados naquele momento;
 - *send*: Este comando serve para o cliente enviar alguma mensagem a um outro cliente. O cliente precisa digitar o email de destino e a mensagem que deseja enviar. O servidor fica responsável por enviar a mensagem;
 - *quit*: O cliente se desconecta do chat;
+- *history*: Ver histórico de mensagens enviadas e recebidas;
+- *menu*: Mostrar esse menu novamente;
 
 **Observação:** Para cada comando enviado ao servidor é necessário pressionar enter para receber a resposta. De tempos em tempos, é necessário pressionar enter para receber novas mensagens de clientes.
 #### O Servidor
@@ -46,17 +48,20 @@ São utilizadas três ***threads***:
 
 ### O lado cliente
 
-- Conecta ao servidor e digita os comandos que deseja;
-- Múltiplos clientes acessando ao mesmo tempo;
-- O cliente não sabe como o servidor funciona;
+Conecta ao servidor e digita os comandos que deseja;
+Múltiplos clientes acessando ao mesmo tempo;
+O cliente não sabe como o servidor funciona;
+São utilizadas duas ***threads***:
+1. ***Thread* 1**: Responsável receber mensagens do teclado.
+2. ***Thread* 2**: Responsável por lidar com as novas mensagens
+
 
 ## Testes executados
 
-- Para realizar os testes, o servidor foi executado em uma máquina
-virtual instanciada na nuvem utilizando o *AWS EC2*;
 - Múltiplos clientes foram conectados para testar o acesso simultâneo ao serviço descrito;
 - O estado do servidor é mantido devido ao arquivo de log implementado;
 - O tempo que uma mensagem demora para ser enviada é desprezível;
+- Script simulando vários clientes conectados;
 
 ## Instalações e execução do *chat one-to-one*
 
