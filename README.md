@@ -19,7 +19,7 @@ Neste chat são implementados três comandos para o cliente:
 - *send*: Este comando serve para o cliente enviar alguma mensagem a um outro cliente. O cliente precisa digitar o email de destino e a mensagem que deseja enviar. O servidor fica responsável por enviar a mensagem;
 - *quit*: O cliente se desconecta do chat;
 - *history*: Ver histórico de mensagens enviadas e recebidas;
-- *menu*: Mostrar esse menu novamente;
+- *menu*: Mostrar o menu novamente;
 
 **Observação:** Para cada comando enviado ao servidor é necessário pressionar enter para receber a resposta. De tempos em tempos, é necessário pressionar enter para receber novas mensagens de clientes.
 #### O Servidor
