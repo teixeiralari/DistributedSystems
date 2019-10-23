@@ -11,7 +11,7 @@ HEADER_LENGTH = 10
 class Client():
 
     def __init__(self, email):
-        self.host = "192.168.0.143"
+        self.host = "172.20.10.2"
         self.port = 5000
         self.s = None
         self.email = email
@@ -62,6 +62,8 @@ class Client():
                 self.s.close()
                 sys.exit()
 
+            if message == "menu":
+                self.menu()
             # If message is not empty - send it
             if message:
                 

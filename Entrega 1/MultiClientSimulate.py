@@ -7,7 +7,7 @@ HEADER_LENGTH = 10
 class MultiClientSimulate():
 
     def __init__(self, number):
-        self.host = "192.168.0.143"
+        self.host = "172.20.10.2"
         self.email = 'Client-' + str(number)
         self.s = None
         self.port = 5000

@@ -5,3 +5,46 @@ rafael;katy;dasdsada;OK
 katy;rafael;oi ;OK
 dasdsada;OK;;
 katy;rafael;oi ;OK
+tawane@ufu.br;murillo;cade o email ;OK
+henriquemorais1@hotmail.com;murillo;Opa;OK
+henriquemorais1@hotmail.com;murillo ;fala tu;Pending
+henriquemorais1@hotmail.com;murillo;fala tu;OK
+tawane@ufu.br;murillo ;jjajajajajaja;Pending
+murillo;henriquemorais1@hotmail.com;xiu;OK
+henriquemorais1@hotmail.com;murillo;agora vai;OK
+SeuCuca;murillo;Oie;OK
+tawane@ufu.br;henriquemorais1@hotmail.com;vai estudar quando ? ;Pending
+tawane@ufu.br;seucuca;jajajajaja;Pending
+SeuCuca;tawanne;oi;Pending
+SeuCuca;tawane@ufu.br;oi;OK
+20comer70fugir;Alberto;oi;OK
+20comer70fugir;larissa;hi lary;OK
+@pantera;Alberto;oi vamo tc?;Pending
+larissa;@pantera;oi pan;OK
+20comer70fugir;@pantera;rawwwwwwww;OK
+100noçao;@pantera;CHAMA O LAURO AI, TA TUDO CERTO;OK
+@pantera;larissa;oieee amiga;OK
+100noçao;@pantera;que cara doido;OK
+@pantera;100noçao;vamo tc?;OK
+100noçao;20comer70fugir;que cara doido;OK
+20comer70fugir;;;Pending
+send;send;;OK
+send;list;oieee;OK
+larissa;Naruto;hi ;OK
+@MuMuRBD;Naruto;esse eh o meu jeito ninja;OK
+larissa;@MuMuRBD;ih sou rebelde;OK
+tata_22k;MuMuRBD;oiee jajajajaj ;Pending
+@MuMuRBD;Agora eu sou o sasuke;itachi is dead;OK
+larissa;Agora eu sou o sasuke;oi amigo do naruto;OK
+Agora eu sou o sasuke;;;Pending
+tata_22k;larissa;helow ;OK
+Agora eu sou o sasuke;@MuMuRBD;Vo mata minha aldeia;OK
+Agora eu sou o sasuke;@MuMuRBD;NANI;OK
+@MuMuRBD;Agora eu sou o sasuke;Rasengannnnnnnn;Pending
+mu;henrique;oiiieee;OK
+henrique;mu;olá;OK
+tawane@ufu.br;mu;oiee ;OK
+mu;henrique;testee;OK
+mu;henrique;blaaa;OK
+tawane@ufu.br;henrique;oiee ;OK
+mu;lasaro;iiii;OK

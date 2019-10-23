@@ -1,0 +1,192 @@
+syntax = "proto3";
+
+
+message Usuario{
+    string usuario = 1;
+}
+
+message Procedimentos{
+    string idProcedimento = 1;
+    string descricaoProcedimento = 2;
+    string idPaciente = 3;
+    string data = 4;
+}
+
+message Pacientes {
+    string idPaciente = 1;
+    string nomeRN = 2;
+    string maeRN = 3;
+    string dataHoraNasc = 4;
+    float peso = 5;
+    enum Sexo{
+                SEXO_DESCONHECIDO = 0;
+                FEMININO = 1;
+                MASCULINO = 2;
+            }
+         
+    Sexo sexo = 6;
+    string cidadeNasc = 7;
+    int32 idadeGestacional = 8;
+    string dataDiagnostico = 9;
+    enum Parto{
+        PARTO_DESCONHECIDO = 0;
+        CESARIA = 1;
+        NORMAL = 2;         
+    }
+
+    Parto tipoParto = 10;
+    string descricaoUTI = 11;
+    string descricaoStatus = 12;
+
+    repeated Procedimentos procedimentos = 13;
+    Medicos medico = 14;
+}
+
+message Medicos{
+    string nome = 1;
+    string CRM = 2;
+    string dataNasc = 3;
+}
+
+message RegistrarPacientes {
+    Pacientes pacientes = 1;
+    Usuario usuario = 2;
+}
+
+message RegistrarPacientesResposta{
+    string resposta = 1;
+}
+
+message AtualizarPacientes {
+    Pacientes pacientes = 1;
+    Usuario usuario = 2;
+}
+
+message AtualizarPacientesResposta{
+    string resposta = 1;
+}
+
+
+message DeletarPacientes {
+    string idPaciente = 1;
+    Usuario usuario = 2;
+}
+
+message DeletarPacientesResposta{
+    string resposta = 1;
+}
+
+message ConsultarPacientes{
+    string idPaciente = 1;
+    Usuario usuario = 2;
+}
+
+
+message ConsultarPacientesResposta{
+    Pacientes pacientes = 1;
+}
+
+message TodosPacientes {
+    Usuario usuario = 1;
+}
+
+message TodosPacientesResposta {
+    repeated Pacientes pacientes = 1;
+}
+
+
+message RegistrarProcedimentos {
+    Procedimentos procedimentos = 1;
+    Usuario usuario = 2;
+}
+
+message RegistrarProcedimentosResposta{
+    string resposta = 1;
+}
+
+message AtualizarProcedimentos {
+    Procedimentos procedimentos = 1;
+    Usuario usuario = 2;
+}
+
+message AtualizarProcedimentosResposta{
+    string resposta = 1;
+}
+
+message DeletarProcedimentos {
+    string idProcedimento = 1;
+    string idPaciente = 2;
+    Usuario usuario = 3;
+}
+
+message DeletarProcedimentosResposta{
+    string resposta = 1;
+}
+
+message ConsultarProcedimentos{
+    string idPaciente = 1;
+    string idProcedimento = 2;
+    Usuario usuario = 3;
+}
+
+message ConsultarProcedimentosResposta{
+    Procedimentos procedimentos = 1;
+}
+
+message TodosProcedimentosPaciente {
+    string idPaciente = 1;
+    Usuario usuario = 2;
+}
+
+message TodosProcedimentosPacienteResposta {
+    repeated Procedimentos procedimentos = 1;
+    string nomeRN = 2;
+    string dataHoraNasc = 3;
+}
+
+message RegistrarMedico{
+    Medicos medico = 1;
+    Usuario usuario = 2;
+}
+
+message RegistrarMedicoResposta{
+    string resposta = 1;
+}
+
+message TodosMedicos{
+    Usuario usuario = 2;
+}
+
+message TodosMedicosResposta{
+    repeated Medicos medicos = 1;
+}
+
+message TodosPacientesMedico{
+    string CRM = 1;
+    Usuario usuario = 2;
+}
+
+message TodosPacientesMedicoResposta{
+    repeated Pacientes pacientes = 1;
+}
+
+
+
+service NeoNat{
+    rpc InserirPacientes(RegistrarPacientes) returns (RegistrarPacientesResposta) {}
+    rpc EditarPacientes(AtualizarPacientes) returns (AtualizarPacientesResposta) {}
+    rpc ExcluirPacientes(DeletarPacientes) returns (DeletarPacientesResposta) {}
+    rpc PesquisarPacientes(ConsultarPacientes) returns (ConsultarPacientesResposta) {}
+    rpc ListarPacientes(TodosPacientes) returns (TodosPacientesResposta) {}
+
+    rpc InserirProcedimentos(RegistrarProcedimentos) returns (RegistrarProcedimentosResposta) {}
+    rpc EditarProcedimentos(AtualizarProcedimentos) returns (AtualizarProcedimentosResposta) {}
+    rpc ExcluirProcedimentos(DeletarProcedimentos) returns (DeletarProcedimentosResposta) {}
+    rpc PesquisarProcedimentos(ConsultarProcedimentos) returns (ConsultarProcedimentosResposta) {}
+    rpc ListarProcedimentos(TodosProcedimentosPaciente) returns (TodosProcedimentosPacienteResposta) {}
+
+    rpc InserirMedico(RegistrarMedico) returns (RegistrarMedicoResposta) {}
+    rpc ListarMedicos(TodosMedicos) returns (TodosMedicosResposta) {}
+    rpc PesquisarPacientesMedico(TodosPacientesMedico) returns (TodosPacientesMedicoResposta) {}
+
+}
