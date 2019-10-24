@@ -1,13 +1,30 @@
 import grpc
-
+import numpy as np
 # import the generated classes
 import neonat_pb2 
 import neonat_pb2_grpc
 
-# open a gRPC channel
-channel = grpc.insecure_channel('localhost:50051')
-# create a stub (client)
-stub = neonat_pb2_grpc.NeoNatStub(channel)
+#Número de servidores
+m = 4
+
+#VARIÁVEIS GLOBAIS
+ports = [str(50051 + i) for i in range(m)]
+ports_perm = np.random.permutation(ports)
+
+def is_port_in_use(port):
+    import socket
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        return s.connect_ex(('localhost', port)) == 0
+
+
+for i in ports_perm:
+    if is_port_in_use(int(i)):
+    # open a gRPC channel
+        channel = grpc.insecure_channel('localhost:' + i)
+
+        # channel2 = grpc.insecure_channel('10.246.88.139:50052')
+        # create a stub (client)
+        stub = neonat_pb2_grpc.NeoNatStub(channel)
 
 class Client():
     def menu(self):
@@ -387,9 +404,10 @@ def run_client():
             else:
                 print('Comando não válido.')
                 pass
-
-        except:
-            #print(f'{e}')
+        except KeyboardInterrupt:
+            break
+        except Exception as e:
+            print(f'{e}')
             print('Erro. Tente novamente')
             pass
         

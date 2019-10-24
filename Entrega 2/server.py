@@ -6,22 +6,29 @@ import json
 import neonat_pb2 
 import neonat_pb2_grpc
 import datetime
-import time
-import threading
+from chord import *
+import numpy as np
 
-# with open('example.json') as f:
-#     dados = json.loads("".join(list(f.readlines())))
-# countProcedimentos = 1
+#NÚMEROS DE SERVIDORES
+m = 4
+
+#VARIÁVEIS GLOBAIS
+ports = [str(50051 + i) for i in range(m)]
+myport = ''
+succesor_port = ''
+ports_perm = np.random.permutation(ports)
+
 with open('snapshot.txt') as f:
     dados = json.load(f)
 
-server_name = 'SRV01'
-#dados = {'Pacientes': {}, "Procedimentos":{}, "UTI": {}, "Status": {}}
+server_name = 'SRV0'
+
 keysProcedimentos = [*dados['Procedimentos'].keys()]
-countProcedimentos = max([int(x.split(server_name + 'P')[1]) for x in keysProcedimentos]) + 1
+#countProcedimentos = max([int(x.split(server_name + 'P')[1]) for x in keysProcedimentos]) + 1
+countProcedimentos = 0
 
-
-
+channel = grpc.insecure_channel('localhost:' + succesor_port)
+stub = neonat_pb2_grpc.NeoNatStub(channel)
 
 def get_procedimento_paciente(idPaciente, idProcedimento):
     for key, value in dados['Procedimentos'].items():
@@ -44,7 +51,7 @@ tipoParto, descricaoUTI, descricaoStatus, crmMedico):
             return 'Não foi possível cadastrar paciente, médico não cadastrado ou CRM inválido.'
 
         dados['Pacientes'][idPaciente] = {
-                "Dados Pessoais" :     
+                "Dados Pessoais" : 
                         {
                             "NomeRN" : nomeRN,
                             "NomeMae": maeRN,
@@ -293,7 +300,7 @@ class NeonatServer(neonat_pb2_grpc.NeoNatServicer):
     
     def PesquisarPacientes(self, request, context):
         result = pesquisarPaciente(request.idPaciente)
-
+        print('Server 1')
         with open('log.txt', 'a') as log:
             log.write(f'PesquisarPacientes {datetime.datetime.now()} {request.usuario.usuario}\n')
 
@@ -455,43 +462,80 @@ class NeonatServer(neonat_pb2_grpc.NeoNatServicer):
 
         return todosPacientesMedico
 
-    def criar_snapshot(self):
-        atual_time = time.time()
-        while True:
-            atual_time = time.time()
-            while True:
-                if time.time() - atual_time > 10:
-                    with open('test.txt', 'a') as f:
-                        f.write(f'{atual_time}\n')
-                    break 
+    def Ola(self, request, context):
+        resposta_digaola = neonat_pb2.DigaOlaReposta()
+        resposta_digaola.resposta = 'Olá'
+        return resposta_digaola
+        
 
+    def EnviarOla(self):
+        enviarOla = neonat_pb2.DigaOla()
+        global myport, stub, succesor_port, m, channel, ports_perm
+        count = 0
+        for i in ports_perm:
+            if i != myport:
+                    if is_port_in_use(int(i)):
+                        succesor_port = i
+                        channel = grpc.insecure_channel('localhost:' + succesor_port)
+                        stub = neonat_pb2_grpc.NeoNatStub(channel)
+                        respostaenviarOla = stub.Ola(enviarOla)
+                        break
+                    else:
+                        count += 1
+            
+        if count == (m - 1):
+            print('Sou o primeiro')
+        else:
+            print(respostaenviarOla.resposta)
 
-
+def is_port_in_use(port):
+    import socket
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        return s.connect_ex(('localhost', port)) == 0
 
 def run_server():
     #create gRPC server
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10),
     options=(('grpc.so_reuseport', 1),))
-   
-    
-    threading.Thread(target=NeonatServer().criar_snapshot).start()
 
-    # use the generated function `add_MediControlServerServicer_to_server`
-    # to add the defined class to the server
     neonat_pb2_grpc.add_NeoNatServicer_to_server(
             NeonatServer(), server)
-    # listen on port 50051
-    print('Starting server. Listening on port 50051.')
-    server.add_insecure_port('[::]:50051')
-    server.start()
-  
-    # since server.start() will not block,
-    # a sleep-loop is added to keep alive
-    try:
-        while True:
-            time.sleep(86400)
-    except KeyboardInterrupt:
-        server.stop(0) 
+    
+    
+    global ports, myport, ports_perm, server_name, countProcedimentos
+    count = 0
+    
+
+    for i in ports_perm:
+        if not is_port_in_use(int(i)):
+            server.add_insecure_port('[::]:' + i)
+            server.start()
+            break
+        else:
+            count += 1
+
+
+    if count != m:
+        myport = i
+        
+        server_name = server_name + myport[-1]
+        NeonatServer().EnviarOla()
+        
+
+        try:
+            countProcedimentos = max([int(x.split(server_name + 'P')[1]) for x in keysProcedimentos]) + 1
+        except:
+            pass
+        
+        print(f'Starting server. Listening on port {myport}.')
+        
+        try:
+            while True:
+                time.sleep(86400)
+        except KeyboardInterrupt:
+            server.stop(0) 
+    else:
+        print('Número de servidores atingido.')
 
 if __name__ == "__main__":
     run_server()
