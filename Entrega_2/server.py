@@ -1,23 +1,3 @@
-#TO DO
-#Fazer todas as funções do cliente
-    #Inserir pacientes - ok
-    #Atualizar pacientes - ok (falta testar)
-    #Deletar pacientes - ok (falta testar)
-    #Consultar um paciente - ok
-    #Listar todos os pacientes - ok
-
-    #Inserir procedimento - ok
-    #Atualizar procedimento - ok (falta testar)
-    #Excluir procedimento - ok 
-    #Consultar um procedimento de um paciente - ok
-    #Listar todos os procedimentos de um paciente- ok
-
-    #Listar todos os pacientes de um medico - ok
-    #Listar todos os medicos - ok
-    
-#Enviar dados quando o servidor que tem dados para enviar para um servidor acaba de se conectar - ok
-#Hashs unicas 
-
 import grpc
 from concurrent import futures
 import time
