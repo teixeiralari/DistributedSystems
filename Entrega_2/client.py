@@ -1,13 +1,35 @@
 import grpc
-
+import numpy as np
 # import the generated classes
 import neonat_pb2 
 import neonat_pb2_grpc
 
-# open a gRPC channel
-channel = grpc.insecure_channel('localhost:50051')
-# create a stub (client)
-stub = neonat_pb2_grpc.NeoNatStub(channel)
+#Número de servidores
+m = 3
+
+#VARIÁVEIS GLOBAIS
+ports = [str(50051 + i) for i in range(m)]
+ports_perm = np.random.permutation(ports)
+
+ip = 'localhost'
+
+def is_port_in_use(port):
+    global ip
+    import socket
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        return s.connect_ex((ip, port)) == 0
+
+
+for i in ports_perm:
+    if is_port_in_use(int(i)):
+    # open a gRPC channel
+        channel = grpc.insecure_channel(ip + ':' + i)
+
+        # channel2 = grpc.insecure_channel('10.246.88.139:50052')
+        # create a stub (client)
+        stub = neonat_pb2_grpc.NeoNatStub(channel)
+        break
+print(i)
 
 class Client():
     def menu(self):
@@ -188,6 +210,7 @@ class Client():
                 print(f'Nome do paciente: {paciente.nomeRN}')
                 print(f'Nome da mãe: {paciente.maeRN}')
                 print(f'Data de Nascimento: {paciente.dataHoraNasc}')
+                print(f'Cidade natal: {paciente.cidadeNasc}')
                 print(f'Peso: {paciente.peso}')
                 print(f'Sexo: {sexo}')
                 print(f'Idade Gestacional: {paciente.idadeGestacional}')
@@ -283,12 +306,12 @@ class Client():
         listarProcedimentos = neonat_pb2.TodosProcedimentosPaciente(idPaciente=idPaciente, 
         usuario = neonat_pb2.Usuario(usuario=usuario))
         respostaListarProcedimentos = stub.ListarProcedimentos(listarProcedimentos)
-        if respostaListarProcedimentos.nomeRN:
+        if len(respostaListarProcedimentos.nomeRN) > 0:
             print('---------------------------------------------------')
             print(f'ID Paciente: {idPaciente} Nome: {respostaListarProcedimentos.nomeRN} Data de Nascimento: {respostaListarProcedimentos.dataHoraNasc}')
             print('---------------------------------------------------')
-            print('---------------------------------------------------')
             for procedimentos in respostaListarProcedimentos.procedimentos:
+                print('---------------------------------------------------')
                 print(f"ID Procedimentos: {procedimentos.idProcedimento}")
                 print(f'Descrição do Procedimentos: {procedimentos.descricaoProcedimento}')
                 print(f'Data: {procedimentos.data}')
@@ -330,11 +353,14 @@ class Client():
             print('Nenhum paciente encontrado para este médico.')
         else:
             for paciente in respostalistarPacientesMedico.pacientes:
-                print('---------------------------------------------------')
-                print(f'ID Paciente: {paciente.idPaciente}')
-                print(f'Nome paciente: {paciente.nomeRN}')
-                print(f'Data de Nascimento: {paciente.dataHoraNasc}')
-                print('---------------------------------------------------')
+                if paciente.idPaciente == "Médico não encontrado":
+                    print('Médico não encontrado')
+                else:
+                    print('---------------------------------------------------')
+                    print(f'ID Paciente: {paciente.idPaciente}')
+                    print(f'Nome paciente: {paciente.nomeRN}')
+                    print(f'Data de Nascimento: {paciente.dataHoraNasc}')
+                    print('---------------------------------------------------')
 
                
 def run_client():
@@ -387,9 +413,10 @@ def run_client():
             else:
                 print('Comando não válido.')
                 pass
-
-        except:
-            #print(f'{e}')
+        except KeyboardInterrupt:
+            break
+        except Exception as e:
+            print(f'{e}')
             print('Erro. Tente novamente')
             pass
         

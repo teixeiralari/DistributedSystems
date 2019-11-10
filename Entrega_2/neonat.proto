@@ -88,6 +88,7 @@ message ConsultarPacientesResposta{
 
 message TodosPacientes {
     Usuario usuario = 1;
+    string nome_servidor = 2;
 }
 
 message TodosPacientesResposta {
@@ -154,7 +155,8 @@ message RegistrarMedicoResposta{
 }
 
 message TodosMedicos{
-    Usuario usuario = 2;
+    Usuario usuario = 1;
+    string nome_servidor = 2;
 }
 
 message TodosMedicosResposta{
@@ -171,6 +173,50 @@ message TodosPacientesMedicoResposta{
 }
 
 
+message NovoServidor{
+    string nome_servidor = 1;
+    repeated string pacientes = 2;
+    repeated string medicos = 3;
+    repeated string idProcedimentos = 4;
+    repeated string idPacientes = 5;
+}
+
+message NovoServidorReposta{
+    string nome_servidor = 1;
+    repeated Pacientes pacientes = 2;
+    repeated Medicos medicos = 3;
+    repeated Procedimentos procedimentos = 4;
+}
+
+message NovoDadoPaciente{
+    string nome_servidor = 1;
+    Pacientes pacientes = 2;
+    string comando = 3;
+}
+
+message NovoDadoPacienteResposta{
+    string resposta = 1;
+}
+
+message NovoDadoProcedimento{
+    string nome_servidor = 1;
+    Procedimentos procedimentos = 2;
+    string comando = 3;
+}
+
+message NovoDadoProcedimentoResposta{
+    string resposta = 1;
+}
+
+message NovoDadoMedico{
+    string nome_servidor = 1;
+    Medicos medicos = 2;
+    string comando = 3;
+} 
+
+message NovoDadoMedicoResposta{
+    string resposta = 1;
+}
 
 service NeoNat{
     rpc InserirPacientes(RegistrarPacientes) returns (RegistrarPacientesResposta) {}
@@ -189,4 +235,8 @@ service NeoNat{
     rpc ListarMedicos(TodosMedicos) returns (TodosMedicosResposta) {}
     rpc PesquisarPacientesMedico(TodosPacientesMedico) returns (TodosPacientesMedicoResposta) {}
 
+    rpc EnviarInformacoes(NovoServidor) returns (NovoServidorReposta) {}
+    rpc EnviarNovoPaciente(NovoDadoPaciente) returns (NovoDadoPacienteResposta) {}
+    rpc EnviarNovoProcedimento(NovoDadoProcedimento) returns (NovoDadoProcedimentoResposta) {}
+    rpc EnviarNovoMedico(NovoDadoMedico) returns (NovoDadoMedicoResposta) {}
 }

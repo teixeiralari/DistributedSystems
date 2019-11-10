@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='neonat.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cneonat.proto\"\x1a\n\x07Usuario\x12\x0f\n\x07usuario\x18\x01 \x01(\t\"h\n\rProcedimentos\x12\x16\n\x0eidProcedimento\x18\x01 \x01(\t\x12\x1d\n\x15\x64\x65scricaoProcedimento\x18\x02 \x01(\t\x12\x12\n\nidPaciente\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\t\"\xd3\x03\n\tPacientes\x12\x12\n\nidPaciente\x18\x01 \x01(\t\x12\x0e\n\x06nomeRN\x18\x02 \x01(\t\x12\r\n\x05maeRN\x18\x03 \x01(\t\x12\x14\n\x0c\x64\x61taHoraNasc\x18\x04 \x01(\t\x12\x0c\n\x04peso\x18\x05 \x01(\x02\x12\x1d\n\x04sexo\x18\x06 \x01(\x0e\x32\x0f.Pacientes.Sexo\x12\x12\n\ncidadeNasc\x18\x07 \x01(\t\x12\x18\n\x10idadeGestacional\x18\x08 \x01(\x05\x12\x17\n\x0f\x64\x61taDiagnostico\x18\t \x01(\t\x12#\n\ttipoParto\x18\n \x01(\x0e\x32\x10.Pacientes.Parto\x12\x14\n\x0c\x64\x65scricaoUTI\x18\x0b \x01(\t\x12\x17\n\x0f\x64\x65scricaoStatus\x18\x0c \x01(\t\x12%\n\rprocedimentos\x18\r \x03(\x0b\x32\x0e.Procedimentos\x12\x18\n\x06medico\x18\x0e \x01(\x0b\x32\x08.Medicos\":\n\x04Sexo\x12\x15\n\x11SEXO_DESCONHECIDO\x10\x00\x12\x0c\n\x08\x46\x45MININO\x10\x01\x12\r\n\tMASCULINO\x10\x02\"8\n\x05Parto\x12\x16\n\x12PARTO_DESCONHECIDO\x10\x00\x12\x0b\n\x07\x43\x45SARIA\x10\x01\x12\n\n\x06NORMAL\x10\x02\"6\n\x07Medicos\x12\x0c\n\x04nome\x18\x01 \x01(\t\x12\x0b\n\x03\x43RM\x18\x02 \x01(\t\x12\x10\n\x08\x64\x61taNasc\x18\x03 \x01(\t\"N\n\x12RegistrarPacientes\x12\x1d\n\tpacientes\x18\x01 \x01(\x0b\x32\n.Pacientes\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\".\n\x1aRegistrarPacientesResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"N\n\x12\x41tualizarPacientes\x12\x1d\n\tpacientes\x18\x01 \x01(\x0b\x32\n.Pacientes\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\".\n\x1a\x41tualizarPacientesResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"A\n\x10\x44\x65letarPacientes\x12\x12\n\nidPaciente\x18\x01 \x01(\t\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\",\n\x18\x44\x65letarPacientesResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"C\n\x12\x43onsultarPacientes\x12\x12\n\nidPaciente\x18\x01 \x01(\t\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\";\n\x1a\x43onsultarPacientesResposta\x12\x1d\n\tpacientes\x18\x01 \x01(\x0b\x32\n.Pacientes\"+\n\x0eTodosPacientes\x12\x19\n\x07usuario\x18\x01 \x01(\x0b\x32\x08.Usuario\"7\n\x16TodosPacientesResposta\x12\x1d\n\tpacientes\x18\x01 \x03(\x0b\x32\n.Pacientes\"Z\n\x16RegistrarProcedimentos\x12%\n\rprocedimentos\x18\x01 \x01(\x0b\x32\x0e.Procedimentos\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\"2\n\x1eRegistrarProcedimentosResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"Z\n\x16\x41tualizarProcedimentos\x12%\n\rprocedimentos\x18\x01 \x01(\x0b\x32\x0e.Procedimentos\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\"2\n\x1e\x41tualizarProcedimentosResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"]\n\x14\x44\x65letarProcedimentos\x12\x16\n\x0eidProcedimento\x18\x01 \x01(\t\x12\x12\n\nidPaciente\x18\x02 \x01(\t\x12\x19\n\x07usuario\x18\x03 \x01(\x0b\x32\x08.Usuario\"0\n\x1c\x44\x65letarProcedimentosResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"_\n\x16\x43onsultarProcedimentos\x12\x12\n\nidPaciente\x18\x01 \x01(\t\x12\x16\n\x0eidProcedimento\x18\x02 \x01(\t\x12\x19\n\x07usuario\x18\x03 \x01(\x0b\x32\x08.Usuario\"G\n\x1e\x43onsultarProcedimentosResposta\x12%\n\rprocedimentos\x18\x01 \x01(\x0b\x32\x0e.Procedimentos\"K\n\x1aTodosProcedimentosPaciente\x12\x12\n\nidPaciente\x18\x01 \x01(\t\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\"q\n\"TodosProcedimentosPacienteResposta\x12%\n\rprocedimentos\x18\x01 \x03(\x0b\x32\x0e.Procedimentos\x12\x0e\n\x06nomeRN\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x61taHoraNasc\x18\x03 \x01(\t\"F\n\x0fRegistrarMedico\x12\x18\n\x06medico\x18\x01 \x01(\x0b\x32\x08.Medicos\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\"+\n\x17RegistrarMedicoResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\")\n\x0cTodosMedicos\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\"1\n\x14TodosMedicosResposta\x12\x19\n\x07medicos\x18\x01 \x03(\x0b\x32\x08.Medicos\">\n\x14TodosPacientesMedico\x12\x0b\n\x03\x43RM\x18\x01 \x01(\t\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\"=\n\x1cTodosPacientesMedicoResposta\x12\x1d\n\tpacientes\x18\x01 \x03(\x0b\x32\n.Pacientes2\xd8\x07\n\x06NeoNat\x12\x46\n\x10InserirPacientes\x12\x13.RegistrarPacientes\x1a\x1b.RegistrarPacientesResposta\"\x00\x12\x45\n\x0f\x45\x64itarPacientes\x12\x13.AtualizarPacientes\x1a\x1b.AtualizarPacientesResposta\"\x00\x12\x42\n\x10\x45xcluirPacientes\x12\x11.DeletarPacientes\x1a\x19.DeletarPacientesResposta\"\x00\x12H\n\x12PesquisarPacientes\x12\x13.ConsultarPacientes\x1a\x1b.ConsultarPacientesResposta\"\x00\x12=\n\x0fListarPacientes\x12\x0f.TodosPacientes\x1a\x17.TodosPacientesResposta\"\x00\x12R\n\x14InserirProcedimentos\x12\x17.RegistrarProcedimentos\x1a\x1f.RegistrarProcedimentosResposta\"\x00\x12Q\n\x13\x45\x64itarProcedimentos\x12\x17.AtualizarProcedimentos\x1a\x1f.AtualizarProcedimentosResposta\"\x00\x12N\n\x14\x45xcluirProcedimentos\x12\x15.DeletarProcedimentos\x1a\x1d.DeletarProcedimentosResposta\"\x00\x12T\n\x16PesquisarProcedimentos\x12\x17.ConsultarProcedimentos\x1a\x1f.ConsultarProcedimentosResposta\"\x00\x12Y\n\x13ListarProcedimentos\x12\x1b.TodosProcedimentosPaciente\x1a#.TodosProcedimentosPacienteResposta\"\x00\x12=\n\rInserirMedico\x12\x10.RegistrarMedico\x1a\x18.RegistrarMedicoResposta\"\x00\x12\x37\n\rListarMedicos\x12\r.TodosMedicos\x1a\x15.TodosMedicosResposta\"\x00\x12R\n\x18PesquisarPacientesMedico\x12\x15.TodosPacientesMedico\x1a\x1d.TodosPacientesMedicoResposta\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x0cneonat.proto\"\x1a\n\x07Usuario\x12\x0f\n\x07usuario\x18\x01 \x01(\t\"h\n\rProcedimentos\x12\x16\n\x0eidProcedimento\x18\x01 \x01(\t\x12\x1d\n\x15\x64\x65scricaoProcedimento\x18\x02 \x01(\t\x12\x12\n\nidPaciente\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\t\"\xd3\x03\n\tPacientes\x12\x12\n\nidPaciente\x18\x01 \x01(\t\x12\x0e\n\x06nomeRN\x18\x02 \x01(\t\x12\r\n\x05maeRN\x18\x03 \x01(\t\x12\x14\n\x0c\x64\x61taHoraNasc\x18\x04 \x01(\t\x12\x0c\n\x04peso\x18\x05 \x01(\x02\x12\x1d\n\x04sexo\x18\x06 \x01(\x0e\x32\x0f.Pacientes.Sexo\x12\x12\n\ncidadeNasc\x18\x07 \x01(\t\x12\x18\n\x10idadeGestacional\x18\x08 \x01(\x05\x12\x17\n\x0f\x64\x61taDiagnostico\x18\t \x01(\t\x12#\n\ttipoParto\x18\n \x01(\x0e\x32\x10.Pacientes.Parto\x12\x14\n\x0c\x64\x65scricaoUTI\x18\x0b \x01(\t\x12\x17\n\x0f\x64\x65scricaoStatus\x18\x0c \x01(\t\x12%\n\rprocedimentos\x18\r \x03(\x0b\x32\x0e.Procedimentos\x12\x18\n\x06medico\x18\x0e \x01(\x0b\x32\x08.Medicos\":\n\x04Sexo\x12\x15\n\x11SEXO_DESCONHECIDO\x10\x00\x12\x0c\n\x08\x46\x45MININO\x10\x01\x12\r\n\tMASCULINO\x10\x02\"8\n\x05Parto\x12\x16\n\x12PARTO_DESCONHECIDO\x10\x00\x12\x0b\n\x07\x43\x45SARIA\x10\x01\x12\n\n\x06NORMAL\x10\x02\"6\n\x07Medicos\x12\x0c\n\x04nome\x18\x01 \x01(\t\x12\x0b\n\x03\x43RM\x18\x02 \x01(\t\x12\x10\n\x08\x64\x61taNasc\x18\x03 \x01(\t\"N\n\x12RegistrarPacientes\x12\x1d\n\tpacientes\x18\x01 \x01(\x0b\x32\n.Pacientes\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\".\n\x1aRegistrarPacientesResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"N\n\x12\x41tualizarPacientes\x12\x1d\n\tpacientes\x18\x01 \x01(\x0b\x32\n.Pacientes\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\".\n\x1a\x41tualizarPacientesResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"A\n\x10\x44\x65letarPacientes\x12\x12\n\nidPaciente\x18\x01 \x01(\t\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\",\n\x18\x44\x65letarPacientesResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"C\n\x12\x43onsultarPacientes\x12\x12\n\nidPaciente\x18\x01 \x01(\t\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\";\n\x1a\x43onsultarPacientesResposta\x12\x1d\n\tpacientes\x18\x01 \x01(\x0b\x32\n.Pacientes\"B\n\x0eTodosPacientes\x12\x19\n\x07usuario\x18\x01 \x01(\x0b\x32\x08.Usuario\x12\x15\n\rnome_servidor\x18\x02 \x01(\t\"7\n\x16TodosPacientesResposta\x12\x1d\n\tpacientes\x18\x01 \x03(\x0b\x32\n.Pacientes\"Z\n\x16RegistrarProcedimentos\x12%\n\rprocedimentos\x18\x01 \x01(\x0b\x32\x0e.Procedimentos\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\"2\n\x1eRegistrarProcedimentosResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"Z\n\x16\x41tualizarProcedimentos\x12%\n\rprocedimentos\x18\x01 \x01(\x0b\x32\x0e.Procedimentos\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\"2\n\x1e\x41tualizarProcedimentosResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"]\n\x14\x44\x65letarProcedimentos\x12\x16\n\x0eidProcedimento\x18\x01 \x01(\t\x12\x12\n\nidPaciente\x18\x02 \x01(\t\x12\x19\n\x07usuario\x18\x03 \x01(\x0b\x32\x08.Usuario\"0\n\x1c\x44\x65letarProcedimentosResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"_\n\x16\x43onsultarProcedimentos\x12\x12\n\nidPaciente\x18\x01 \x01(\t\x12\x16\n\x0eidProcedimento\x18\x02 \x01(\t\x12\x19\n\x07usuario\x18\x03 \x01(\x0b\x32\x08.Usuario\"G\n\x1e\x43onsultarProcedimentosResposta\x12%\n\rprocedimentos\x18\x01 \x01(\x0b\x32\x0e.Procedimentos\"K\n\x1aTodosProcedimentosPaciente\x12\x12\n\nidPaciente\x18\x01 \x01(\t\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\"q\n\"TodosProcedimentosPacienteResposta\x12%\n\rprocedimentos\x18\x01 \x03(\x0b\x32\x0e.Procedimentos\x12\x0e\n\x06nomeRN\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x61taHoraNasc\x18\x03 \x01(\t\"F\n\x0fRegistrarMedico\x12\x18\n\x06medico\x18\x01 \x01(\x0b\x32\x08.Medicos\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\"+\n\x17RegistrarMedicoResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"@\n\x0cTodosMedicos\x12\x19\n\x07usuario\x18\x01 \x01(\x0b\x32\x08.Usuario\x12\x15\n\rnome_servidor\x18\x02 \x01(\t\"1\n\x14TodosMedicosResposta\x12\x19\n\x07medicos\x18\x01 \x03(\x0b\x32\x08.Medicos\">\n\x14TodosPacientesMedico\x12\x0b\n\x03\x43RM\x18\x01 \x01(\t\x12\x19\n\x07usuario\x18\x02 \x01(\x0b\x32\x08.Usuario\"=\n\x1cTodosPacientesMedicoResposta\x12\x1d\n\tpacientes\x18\x01 \x03(\x0b\x32\n.Pacientes\"w\n\x0cNovoServidor\x12\x15\n\rnome_servidor\x18\x01 \x01(\t\x12\x11\n\tpacientes\x18\x02 \x03(\t\x12\x0f\n\x07medicos\x18\x03 \x03(\t\x12\x17\n\x0fidProcedimentos\x18\x04 \x03(\t\x12\x13\n\x0bidPacientes\x18\x05 \x03(\t\"\x8d\x01\n\x13NovoServidorReposta\x12\x15\n\rnome_servidor\x18\x01 \x01(\t\x12\x1d\n\tpacientes\x18\x02 \x03(\x0b\x32\n.Pacientes\x12\x19\n\x07medicos\x18\x03 \x03(\x0b\x32\x08.Medicos\x12%\n\rprocedimentos\x18\x04 \x03(\x0b\x32\x0e.Procedimentos\"Y\n\x10NovoDadoPaciente\x12\x15\n\rnome_servidor\x18\x01 \x01(\t\x12\x1d\n\tpacientes\x18\x02 \x01(\x0b\x32\n.Pacientes\x12\x0f\n\x07\x63omando\x18\x03 \x01(\t\",\n\x18NovoDadoPacienteResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"e\n\x14NovoDadoProcedimento\x12\x15\n\rnome_servidor\x18\x01 \x01(\t\x12%\n\rprocedimentos\x18\x02 \x01(\x0b\x32\x0e.Procedimentos\x12\x0f\n\x07\x63omando\x18\x03 \x01(\t\"0\n\x1cNovoDadoProcedimentoResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t\"S\n\x0eNovoDadoMedico\x12\x15\n\rnome_servidor\x18\x01 \x01(\t\x12\x19\n\x07medicos\x18\x02 \x01(\x0b\x32\x08.Medicos\x12\x0f\n\x07\x63omando\x18\x03 \x01(\t\"*\n\x16NovoDadoMedicoResposta\x12\x10\n\x08resposta\x18\x01 \x01(\t2\xec\t\n\x06NeoNat\x12\x46\n\x10InserirPacientes\x12\x13.RegistrarPacientes\x1a\x1b.RegistrarPacientesResposta\"\x00\x12\x45\n\x0f\x45\x64itarPacientes\x12\x13.AtualizarPacientes\x1a\x1b.AtualizarPacientesResposta\"\x00\x12\x42\n\x10\x45xcluirPacientes\x12\x11.DeletarPacientes\x1a\x19.DeletarPacientesResposta\"\x00\x12H\n\x12PesquisarPacientes\x12\x13.ConsultarPacientes\x1a\x1b.ConsultarPacientesResposta\"\x00\x12=\n\x0fListarPacientes\x12\x0f.TodosPacientes\x1a\x17.TodosPacientesResposta\"\x00\x12R\n\x14InserirProcedimentos\x12\x17.RegistrarProcedimentos\x1a\x1f.RegistrarProcedimentosResposta\"\x00\x12Q\n\x13\x45\x64itarProcedimentos\x12\x17.AtualizarProcedimentos\x1a\x1f.AtualizarProcedimentosResposta\"\x00\x12N\n\x14\x45xcluirProcedimentos\x12\x15.DeletarProcedimentos\x1a\x1d.DeletarProcedimentosResposta\"\x00\x12T\n\x16PesquisarProcedimentos\x12\x17.ConsultarProcedimentos\x1a\x1f.ConsultarProcedimentosResposta\"\x00\x12Y\n\x13ListarProcedimentos\x12\x1b.TodosProcedimentosPaciente\x1a#.TodosProcedimentosPacienteResposta\"\x00\x12=\n\rInserirMedico\x12\x10.RegistrarMedico\x1a\x18.RegistrarMedicoResposta\"\x00\x12\x37\n\rListarMedicos\x12\r.TodosMedicos\x1a\x15.TodosMedicosResposta\"\x00\x12R\n\x18PesquisarPacientesMedico\x12\x15.TodosPacientesMedico\x1a\x1d.TodosPacientesMedicoResposta\"\x00\x12:\n\x11\x45nviarInformacoes\x12\r.NovoServidor\x1a\x14.NovoServidorReposta\"\x00\x12\x44\n\x12\x45nviarNovoPaciente\x12\x11.NovoDadoPaciente\x1a\x19.NovoDadoPacienteResposta\"\x00\x12P\n\x16\x45nviarNovoProcedimento\x12\x15.NovoDadoProcedimento\x1a\x1d.NovoDadoProcedimentoResposta\"\x00\x12>\n\x10\x45nviarNovoMedico\x12\x0f.NovoDadoMedico\x1a\x17.NovoDadoMedicoResposta\"\x00\x62\x06proto3')
 )
 
 
@@ -619,6 +619,13 @@ _TODOSPACIENTES = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='nome_servidor', full_name='TodosPacientes.nome_servidor', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -632,7 +639,7 @@ _TODOSPACIENTES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1175,
-  serialized_end=1218,
+  serialized_end=1241,
 )
 
 
@@ -662,8 +669,8 @@ _TODOSPACIENTESRESPOSTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1220,
-  serialized_end=1275,
+  serialized_start=1243,
+  serialized_end=1298,
 )
 
 
@@ -700,8 +707,8 @@ _REGISTRARPROCEDIMENTOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1277,
-  serialized_end=1367,
+  serialized_start=1300,
+  serialized_end=1390,
 )
 
 
@@ -731,8 +738,8 @@ _REGISTRARPROCEDIMENTOSRESPOSTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1369,
-  serialized_end=1419,
+  serialized_start=1392,
+  serialized_end=1442,
 )
 
 
@@ -769,8 +776,8 @@ _ATUALIZARPROCEDIMENTOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1421,
-  serialized_end=1511,
+  serialized_start=1444,
+  serialized_end=1534,
 )
 
 
@@ -800,8 +807,8 @@ _ATUALIZARPROCEDIMENTOSRESPOSTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1513,
-  serialized_end=1563,
+  serialized_start=1536,
+  serialized_end=1586,
 )
 
 
@@ -845,8 +852,8 @@ _DELETARPROCEDIMENTOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1565,
-  serialized_end=1658,
+  serialized_start=1588,
+  serialized_end=1681,
 )
 
 
@@ -876,8 +883,8 @@ _DELETARPROCEDIMENTOSRESPOSTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1660,
-  serialized_end=1708,
+  serialized_start=1683,
+  serialized_end=1731,
 )
 
 
@@ -921,8 +928,8 @@ _CONSULTARPROCEDIMENTOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1710,
-  serialized_end=1805,
+  serialized_start=1733,
+  serialized_end=1828,
 )
 
 
@@ -952,8 +959,8 @@ _CONSULTARPROCEDIMENTOSRESPOSTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1807,
-  serialized_end=1878,
+  serialized_start=1830,
+  serialized_end=1901,
 )
 
 
@@ -990,8 +997,8 @@ _TODOSPROCEDIMENTOSPACIENTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1880,
-  serialized_end=1955,
+  serialized_start=1903,
+  serialized_end=1978,
 )
 
 
@@ -1035,8 +1042,8 @@ _TODOSPROCEDIMENTOSPACIENTERESPOSTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1957,
-  serialized_end=2070,
+  serialized_start=1980,
+  serialized_end=2093,
 )
 
 
@@ -1073,8 +1080,8 @@ _REGISTRARMEDICO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2072,
-  serialized_end=2142,
+  serialized_start=2095,
+  serialized_end=2165,
 )
 
 
@@ -1104,8 +1111,8 @@ _REGISTRARMEDICORESPOSTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2144,
-  serialized_end=2187,
+  serialized_start=2167,
+  serialized_end=2210,
 )
 
 
@@ -1118,8 +1125,15 @@ _TODOSMEDICOS = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='usuario', full_name='TodosMedicos.usuario', index=0,
-      number=2, type=11, cpp_type=10, label=1,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='nome_servidor', full_name='TodosMedicos.nome_servidor', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1135,8 +1149,8 @@ _TODOSMEDICOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2189,
-  serialized_end=2230,
+  serialized_start=2212,
+  serialized_end=2276,
 )
 
 
@@ -1166,8 +1180,8 @@ _TODOSMEDICOSRESPOSTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2232,
-  serialized_end=2281,
+  serialized_start=2278,
+  serialized_end=2327,
 )
 
 
@@ -1204,8 +1218,8 @@ _TODOSPACIENTESMEDICO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2283,
-  serialized_end=2345,
+  serialized_start=2329,
+  serialized_end=2391,
 )
 
 
@@ -1235,8 +1249,347 @@ _TODOSPACIENTESMEDICORESPOSTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2347,
-  serialized_end=2408,
+  serialized_start=2393,
+  serialized_end=2454,
+)
+
+
+_NOVOSERVIDOR = _descriptor.Descriptor(
+  name='NovoServidor',
+  full_name='NovoServidor',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nome_servidor', full_name='NovoServidor.nome_servidor', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pacientes', full_name='NovoServidor.pacientes', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='medicos', full_name='NovoServidor.medicos', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='idProcedimentos', full_name='NovoServidor.idProcedimentos', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='idPacientes', full_name='NovoServidor.idPacientes', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2456,
+  serialized_end=2575,
+)
+
+
+_NOVOSERVIDORREPOSTA = _descriptor.Descriptor(
+  name='NovoServidorReposta',
+  full_name='NovoServidorReposta',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nome_servidor', full_name='NovoServidorReposta.nome_servidor', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pacientes', full_name='NovoServidorReposta.pacientes', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='medicos', full_name='NovoServidorReposta.medicos', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='procedimentos', full_name='NovoServidorReposta.procedimentos', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2578,
+  serialized_end=2719,
+)
+
+
+_NOVODADOPACIENTE = _descriptor.Descriptor(
+  name='NovoDadoPaciente',
+  full_name='NovoDadoPaciente',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nome_servidor', full_name='NovoDadoPaciente.nome_servidor', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pacientes', full_name='NovoDadoPaciente.pacientes', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='comando', full_name='NovoDadoPaciente.comando', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2721,
+  serialized_end=2810,
+)
+
+
+_NOVODADOPACIENTERESPOSTA = _descriptor.Descriptor(
+  name='NovoDadoPacienteResposta',
+  full_name='NovoDadoPacienteResposta',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='resposta', full_name='NovoDadoPacienteResposta.resposta', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2812,
+  serialized_end=2856,
+)
+
+
+_NOVODADOPROCEDIMENTO = _descriptor.Descriptor(
+  name='NovoDadoProcedimento',
+  full_name='NovoDadoProcedimento',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nome_servidor', full_name='NovoDadoProcedimento.nome_servidor', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='procedimentos', full_name='NovoDadoProcedimento.procedimentos', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='comando', full_name='NovoDadoProcedimento.comando', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2858,
+  serialized_end=2959,
+)
+
+
+_NOVODADOPROCEDIMENTORESPOSTA = _descriptor.Descriptor(
+  name='NovoDadoProcedimentoResposta',
+  full_name='NovoDadoProcedimentoResposta',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='resposta', full_name='NovoDadoProcedimentoResposta.resposta', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2961,
+  serialized_end=3009,
+)
+
+
+_NOVODADOMEDICO = _descriptor.Descriptor(
+  name='NovoDadoMedico',
+  full_name='NovoDadoMedico',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nome_servidor', full_name='NovoDadoMedico.nome_servidor', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='medicos', full_name='NovoDadoMedico.medicos', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='comando', full_name='NovoDadoMedico.comando', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3011,
+  serialized_end=3094,
+)
+
+
+_NOVODADOMEDICORESPOSTA = _descriptor.Descriptor(
+  name='NovoDadoMedicoResposta',
+  full_name='NovoDadoMedicoResposta',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='resposta', full_name='NovoDadoMedicoResposta.resposta', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3096,
+  serialized_end=3138,
 )
 
 _PACIENTES.fields_by_name['sexo'].enum_type = _PACIENTES_SEXO
@@ -1269,6 +1622,12 @@ _TODOSMEDICOS.fields_by_name['usuario'].message_type = _USUARIO
 _TODOSMEDICOSRESPOSTA.fields_by_name['medicos'].message_type = _MEDICOS
 _TODOSPACIENTESMEDICO.fields_by_name['usuario'].message_type = _USUARIO
 _TODOSPACIENTESMEDICORESPOSTA.fields_by_name['pacientes'].message_type = _PACIENTES
+_NOVOSERVIDORREPOSTA.fields_by_name['pacientes'].message_type = _PACIENTES
+_NOVOSERVIDORREPOSTA.fields_by_name['medicos'].message_type = _MEDICOS
+_NOVOSERVIDORREPOSTA.fields_by_name['procedimentos'].message_type = _PROCEDIMENTOS
+_NOVODADOPACIENTE.fields_by_name['pacientes'].message_type = _PACIENTES
+_NOVODADOPROCEDIMENTO.fields_by_name['procedimentos'].message_type = _PROCEDIMENTOS
+_NOVODADOMEDICO.fields_by_name['medicos'].message_type = _MEDICOS
 DESCRIPTOR.message_types_by_name['Usuario'] = _USUARIO
 DESCRIPTOR.message_types_by_name['Procedimentos'] = _PROCEDIMENTOS
 DESCRIPTOR.message_types_by_name['Pacientes'] = _PACIENTES
@@ -1299,6 +1658,14 @@ DESCRIPTOR.message_types_by_name['TodosMedicos'] = _TODOSMEDICOS
 DESCRIPTOR.message_types_by_name['TodosMedicosResposta'] = _TODOSMEDICOSRESPOSTA
 DESCRIPTOR.message_types_by_name['TodosPacientesMedico'] = _TODOSPACIENTESMEDICO
 DESCRIPTOR.message_types_by_name['TodosPacientesMedicoResposta'] = _TODOSPACIENTESMEDICORESPOSTA
+DESCRIPTOR.message_types_by_name['NovoServidor'] = _NOVOSERVIDOR
+DESCRIPTOR.message_types_by_name['NovoServidorReposta'] = _NOVOSERVIDORREPOSTA
+DESCRIPTOR.message_types_by_name['NovoDadoPaciente'] = _NOVODADOPACIENTE
+DESCRIPTOR.message_types_by_name['NovoDadoPacienteResposta'] = _NOVODADOPACIENTERESPOSTA
+DESCRIPTOR.message_types_by_name['NovoDadoProcedimento'] = _NOVODADOPROCEDIMENTO
+DESCRIPTOR.message_types_by_name['NovoDadoProcedimentoResposta'] = _NOVODADOPROCEDIMENTORESPOSTA
+DESCRIPTOR.message_types_by_name['NovoDadoMedico'] = _NOVODADOMEDICO
+DESCRIPTOR.message_types_by_name['NovoDadoMedicoResposta'] = _NOVODADOMEDICORESPOSTA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Usuario = _reflection.GeneratedProtocolMessageType('Usuario', (_message.Message,), dict(
@@ -1511,6 +1878,62 @@ TodosPacientesMedicoResposta = _reflection.GeneratedProtocolMessageType('TodosPa
   ))
 _sym_db.RegisterMessage(TodosPacientesMedicoResposta)
 
+NovoServidor = _reflection.GeneratedProtocolMessageType('NovoServidor', (_message.Message,), dict(
+  DESCRIPTOR = _NOVOSERVIDOR,
+  __module__ = 'neonat_pb2'
+  # @@protoc_insertion_point(class_scope:NovoServidor)
+  ))
+_sym_db.RegisterMessage(NovoServidor)
+
+NovoServidorReposta = _reflection.GeneratedProtocolMessageType('NovoServidorReposta', (_message.Message,), dict(
+  DESCRIPTOR = _NOVOSERVIDORREPOSTA,
+  __module__ = 'neonat_pb2'
+  # @@protoc_insertion_point(class_scope:NovoServidorReposta)
+  ))
+_sym_db.RegisterMessage(NovoServidorReposta)
+
+NovoDadoPaciente = _reflection.GeneratedProtocolMessageType('NovoDadoPaciente', (_message.Message,), dict(
+  DESCRIPTOR = _NOVODADOPACIENTE,
+  __module__ = 'neonat_pb2'
+  # @@protoc_insertion_point(class_scope:NovoDadoPaciente)
+  ))
+_sym_db.RegisterMessage(NovoDadoPaciente)
+
+NovoDadoPacienteResposta = _reflection.GeneratedProtocolMessageType('NovoDadoPacienteResposta', (_message.Message,), dict(
+  DESCRIPTOR = _NOVODADOPACIENTERESPOSTA,
+  __module__ = 'neonat_pb2'
+  # @@protoc_insertion_point(class_scope:NovoDadoPacienteResposta)
+  ))
+_sym_db.RegisterMessage(NovoDadoPacienteResposta)
+
+NovoDadoProcedimento = _reflection.GeneratedProtocolMessageType('NovoDadoProcedimento', (_message.Message,), dict(
+  DESCRIPTOR = _NOVODADOPROCEDIMENTO,
+  __module__ = 'neonat_pb2'
+  # @@protoc_insertion_point(class_scope:NovoDadoProcedimento)
+  ))
+_sym_db.RegisterMessage(NovoDadoProcedimento)
+
+NovoDadoProcedimentoResposta = _reflection.GeneratedProtocolMessageType('NovoDadoProcedimentoResposta', (_message.Message,), dict(
+  DESCRIPTOR = _NOVODADOPROCEDIMENTORESPOSTA,
+  __module__ = 'neonat_pb2'
+  # @@protoc_insertion_point(class_scope:NovoDadoProcedimentoResposta)
+  ))
+_sym_db.RegisterMessage(NovoDadoProcedimentoResposta)
+
+NovoDadoMedico = _reflection.GeneratedProtocolMessageType('NovoDadoMedico', (_message.Message,), dict(
+  DESCRIPTOR = _NOVODADOMEDICO,
+  __module__ = 'neonat_pb2'
+  # @@protoc_insertion_point(class_scope:NovoDadoMedico)
+  ))
+_sym_db.RegisterMessage(NovoDadoMedico)
+
+NovoDadoMedicoResposta = _reflection.GeneratedProtocolMessageType('NovoDadoMedicoResposta', (_message.Message,), dict(
+  DESCRIPTOR = _NOVODADOMEDICORESPOSTA,
+  __module__ = 'neonat_pb2'
+  # @@protoc_insertion_point(class_scope:NovoDadoMedicoResposta)
+  ))
+_sym_db.RegisterMessage(NovoDadoMedicoResposta)
+
 
 try:
   # THESE ELEMENTS WILL BE DEPRECATED.
@@ -1596,6 +2019,26 @@ try:
           '/NeoNat/PesquisarPacientesMedico',
           request_serializer=TodosPacientesMedico.SerializeToString,
           response_deserializer=TodosPacientesMedicoResposta.FromString,
+          )
+      self.EnviarInformacoes = channel.unary_unary(
+          '/NeoNat/EnviarInformacoes',
+          request_serializer=NovoServidor.SerializeToString,
+          response_deserializer=NovoServidorReposta.FromString,
+          )
+      self.EnviarNovoPaciente = channel.unary_unary(
+          '/NeoNat/EnviarNovoPaciente',
+          request_serializer=NovoDadoPaciente.SerializeToString,
+          response_deserializer=NovoDadoPacienteResposta.FromString,
+          )
+      self.EnviarNovoProcedimento = channel.unary_unary(
+          '/NeoNat/EnviarNovoProcedimento',
+          request_serializer=NovoDadoProcedimento.SerializeToString,
+          response_deserializer=NovoDadoProcedimentoResposta.FromString,
+          )
+      self.EnviarNovoMedico = channel.unary_unary(
+          '/NeoNat/EnviarNovoMedico',
+          request_serializer=NovoDadoMedico.SerializeToString,
+          response_deserializer=NovoDadoMedicoResposta.FromString,
           )
 
 
@@ -1694,6 +2137,34 @@ try:
       context.set_details('Method not implemented!')
       raise NotImplementedError('Method not implemented!')
 
+    def EnviarInformacoes(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
+    def EnviarNovoPaciente(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
+    def EnviarNovoProcedimento(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
+    def EnviarNovoMedico(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
 
   def add_NeoNatServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1762,6 +2233,26 @@ try:
             request_deserializer=TodosPacientesMedico.FromString,
             response_serializer=TodosPacientesMedicoResposta.SerializeToString,
         ),
+        'EnviarInformacoes': grpc.unary_unary_rpc_method_handler(
+            servicer.EnviarInformacoes,
+            request_deserializer=NovoServidor.FromString,
+            response_serializer=NovoServidorReposta.SerializeToString,
+        ),
+        'EnviarNovoPaciente': grpc.unary_unary_rpc_method_handler(
+            servicer.EnviarNovoPaciente,
+            request_deserializer=NovoDadoPaciente.FromString,
+            response_serializer=NovoDadoPacienteResposta.SerializeToString,
+        ),
+        'EnviarNovoProcedimento': grpc.unary_unary_rpc_method_handler(
+            servicer.EnviarNovoProcedimento,
+            request_deserializer=NovoDadoProcedimento.FromString,
+            response_serializer=NovoDadoProcedimentoResposta.SerializeToString,
+        ),
+        'EnviarNovoMedico': grpc.unary_unary_rpc_method_handler(
+            servicer.EnviarNovoMedico,
+            request_deserializer=NovoDadoMedico.FromString,
+            response_serializer=NovoDadoMedicoResposta.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
         'NeoNat', rpc_method_handlers)
@@ -1825,6 +2316,22 @@ try:
       pass
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
     def PesquisarPacientesMedico(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def EnviarInformacoes(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def EnviarNovoPaciente(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def EnviarNovoProcedimento(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def EnviarNovoMedico(self, request, context):
       # missing associated documentation comment in .proto file
       pass
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
@@ -1903,6 +2410,26 @@ try:
       pass
       raise NotImplementedError()
     PesquisarPacientesMedico.future = None
+    def EnviarInformacoes(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      # missing associated documentation comment in .proto file
+      pass
+      raise NotImplementedError()
+    EnviarInformacoes.future = None
+    def EnviarNovoPaciente(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      # missing associated documentation comment in .proto file
+      pass
+      raise NotImplementedError()
+    EnviarNovoPaciente.future = None
+    def EnviarNovoProcedimento(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      # missing associated documentation comment in .proto file
+      pass
+      raise NotImplementedError()
+    EnviarNovoProcedimento.future = None
+    def EnviarNovoMedico(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      # missing associated documentation comment in .proto file
+      pass
+      raise NotImplementedError()
+    EnviarNovoMedico.future = None
 
 
   def beta_create_NeoNat_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
@@ -1914,6 +2441,10 @@ try:
     request_deserializers = {
       ('NeoNat', 'EditarPacientes'): AtualizarPacientes.FromString,
       ('NeoNat', 'EditarProcedimentos'): AtualizarProcedimentos.FromString,
+      ('NeoNat', 'EnviarInformacoes'): NovoServidor.FromString,
+      ('NeoNat', 'EnviarNovoMedico'): NovoDadoMedico.FromString,
+      ('NeoNat', 'EnviarNovoPaciente'): NovoDadoPaciente.FromString,
+      ('NeoNat', 'EnviarNovoProcedimento'): NovoDadoProcedimento.FromString,
       ('NeoNat', 'ExcluirPacientes'): DeletarPacientes.FromString,
       ('NeoNat', 'ExcluirProcedimentos'): DeletarProcedimentos.FromString,
       ('NeoNat', 'InserirMedico'): RegistrarMedico.FromString,
@@ -1929,6 +2460,10 @@ try:
     response_serializers = {
       ('NeoNat', 'EditarPacientes'): AtualizarPacientesResposta.SerializeToString,
       ('NeoNat', 'EditarProcedimentos'): AtualizarProcedimentosResposta.SerializeToString,
+      ('NeoNat', 'EnviarInformacoes'): NovoServidorReposta.SerializeToString,
+      ('NeoNat', 'EnviarNovoMedico'): NovoDadoMedicoResposta.SerializeToString,
+      ('NeoNat', 'EnviarNovoPaciente'): NovoDadoPacienteResposta.SerializeToString,
+      ('NeoNat', 'EnviarNovoProcedimento'): NovoDadoProcedimentoResposta.SerializeToString,
       ('NeoNat', 'ExcluirPacientes'): DeletarPacientesResposta.SerializeToString,
       ('NeoNat', 'ExcluirProcedimentos'): DeletarProcedimentosResposta.SerializeToString,
       ('NeoNat', 'InserirMedico'): RegistrarMedicoResposta.SerializeToString,
@@ -1944,6 +2479,10 @@ try:
     method_implementations = {
       ('NeoNat', 'EditarPacientes'): face_utilities.unary_unary_inline(servicer.EditarPacientes),
       ('NeoNat', 'EditarProcedimentos'): face_utilities.unary_unary_inline(servicer.EditarProcedimentos),
+      ('NeoNat', 'EnviarInformacoes'): face_utilities.unary_unary_inline(servicer.EnviarInformacoes),
+      ('NeoNat', 'EnviarNovoMedico'): face_utilities.unary_unary_inline(servicer.EnviarNovoMedico),
+      ('NeoNat', 'EnviarNovoPaciente'): face_utilities.unary_unary_inline(servicer.EnviarNovoPaciente),
+      ('NeoNat', 'EnviarNovoProcedimento'): face_utilities.unary_unary_inline(servicer.EnviarNovoProcedimento),
       ('NeoNat', 'ExcluirPacientes'): face_utilities.unary_unary_inline(servicer.ExcluirPacientes),
       ('NeoNat', 'ExcluirProcedimentos'): face_utilities.unary_unary_inline(servicer.ExcluirProcedimentos),
       ('NeoNat', 'InserirMedico'): face_utilities.unary_unary_inline(servicer.InserirMedico),
@@ -1969,6 +2508,10 @@ try:
     request_serializers = {
       ('NeoNat', 'EditarPacientes'): AtualizarPacientes.SerializeToString,
       ('NeoNat', 'EditarProcedimentos'): AtualizarProcedimentos.SerializeToString,
+      ('NeoNat', 'EnviarInformacoes'): NovoServidor.SerializeToString,
+      ('NeoNat', 'EnviarNovoMedico'): NovoDadoMedico.SerializeToString,
+      ('NeoNat', 'EnviarNovoPaciente'): NovoDadoPaciente.SerializeToString,
+      ('NeoNat', 'EnviarNovoProcedimento'): NovoDadoProcedimento.SerializeToString,
       ('NeoNat', 'ExcluirPacientes'): DeletarPacientes.SerializeToString,
       ('NeoNat', 'ExcluirProcedimentos'): DeletarProcedimentos.SerializeToString,
       ('NeoNat', 'InserirMedico'): RegistrarMedico.SerializeToString,
@@ -1984,6 +2527,10 @@ try:
     response_deserializers = {
       ('NeoNat', 'EditarPacientes'): AtualizarPacientesResposta.FromString,
       ('NeoNat', 'EditarProcedimentos'): AtualizarProcedimentosResposta.FromString,
+      ('NeoNat', 'EnviarInformacoes'): NovoServidorReposta.FromString,
+      ('NeoNat', 'EnviarNovoMedico'): NovoDadoMedicoResposta.FromString,
+      ('NeoNat', 'EnviarNovoPaciente'): NovoDadoPacienteResposta.FromString,
+      ('NeoNat', 'EnviarNovoProcedimento'): NovoDadoProcedimentoResposta.FromString,
       ('NeoNat', 'ExcluirPacientes'): DeletarPacientesResposta.FromString,
       ('NeoNat', 'ExcluirProcedimentos'): DeletarProcedimentosResposta.FromString,
       ('NeoNat', 'InserirMedico'): RegistrarMedicoResposta.FromString,
@@ -1999,6 +2546,10 @@ try:
     cardinalities = {
       'EditarPacientes': cardinality.Cardinality.UNARY_UNARY,
       'EditarProcedimentos': cardinality.Cardinality.UNARY_UNARY,
+      'EnviarInformacoes': cardinality.Cardinality.UNARY_UNARY,
+      'EnviarNovoMedico': cardinality.Cardinality.UNARY_UNARY,
+      'EnviarNovoPaciente': cardinality.Cardinality.UNARY_UNARY,
+      'EnviarNovoProcedimento': cardinality.Cardinality.UNARY_UNARY,
       'ExcluirPacientes': cardinality.Cardinality.UNARY_UNARY,
       'ExcluirProcedimentos': cardinality.Cardinality.UNARY_UNARY,
       'InserirMedico': cardinality.Cardinality.UNARY_UNARY,

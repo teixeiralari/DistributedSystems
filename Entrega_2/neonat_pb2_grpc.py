@@ -79,6 +79,26 @@ class NeoNatStub(object):
         request_serializer=neonat__pb2.TodosPacientesMedico.SerializeToString,
         response_deserializer=neonat__pb2.TodosPacientesMedicoResposta.FromString,
         )
+    self.EnviarInformacoes = channel.unary_unary(
+        '/NeoNat/EnviarInformacoes',
+        request_serializer=neonat__pb2.NovoServidor.SerializeToString,
+        response_deserializer=neonat__pb2.NovoServidorReposta.FromString,
+        )
+    self.EnviarNovoPaciente = channel.unary_unary(
+        '/NeoNat/EnviarNovoPaciente',
+        request_serializer=neonat__pb2.NovoDadoPaciente.SerializeToString,
+        response_deserializer=neonat__pb2.NovoDadoPacienteResposta.FromString,
+        )
+    self.EnviarNovoProcedimento = channel.unary_unary(
+        '/NeoNat/EnviarNovoProcedimento',
+        request_serializer=neonat__pb2.NovoDadoProcedimento.SerializeToString,
+        response_deserializer=neonat__pb2.NovoDadoProcedimentoResposta.FromString,
+        )
+    self.EnviarNovoMedico = channel.unary_unary(
+        '/NeoNat/EnviarNovoMedico',
+        request_serializer=neonat__pb2.NovoDadoMedico.SerializeToString,
+        response_deserializer=neonat__pb2.NovoDadoMedicoResposta.FromString,
+        )
 
 
 class NeoNatServicer(object):
@@ -176,6 +196,34 @@ class NeoNatServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def EnviarInformacoes(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def EnviarNovoPaciente(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def EnviarNovoProcedimento(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def EnviarNovoMedico(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_NeoNatServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -243,6 +291,26 @@ def add_NeoNatServicer_to_server(servicer, server):
           servicer.PesquisarPacientesMedico,
           request_deserializer=neonat__pb2.TodosPacientesMedico.FromString,
           response_serializer=neonat__pb2.TodosPacientesMedicoResposta.SerializeToString,
+      ),
+      'EnviarInformacoes': grpc.unary_unary_rpc_method_handler(
+          servicer.EnviarInformacoes,
+          request_deserializer=neonat__pb2.NovoServidor.FromString,
+          response_serializer=neonat__pb2.NovoServidorReposta.SerializeToString,
+      ),
+      'EnviarNovoPaciente': grpc.unary_unary_rpc_method_handler(
+          servicer.EnviarNovoPaciente,
+          request_deserializer=neonat__pb2.NovoDadoPaciente.FromString,
+          response_serializer=neonat__pb2.NovoDadoPacienteResposta.SerializeToString,
+      ),
+      'EnviarNovoProcedimento': grpc.unary_unary_rpc_method_handler(
+          servicer.EnviarNovoProcedimento,
+          request_deserializer=neonat__pb2.NovoDadoProcedimento.FromString,
+          response_serializer=neonat__pb2.NovoDadoProcedimentoResposta.SerializeToString,
+      ),
+      'EnviarNovoMedico': grpc.unary_unary_rpc_method_handler(
+          servicer.EnviarNovoMedico,
+          request_deserializer=neonat__pb2.NovoDadoMedico.FromString,
+          response_serializer=neonat__pb2.NovoDadoMedicoResposta.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
