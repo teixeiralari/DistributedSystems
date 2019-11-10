@@ -5,7 +5,7 @@ import neonat_pb2
 import neonat_pb2_grpc
 
 #Número de servidores
-m = 3
+m = 4
 
 #VARIÁVEIS GLOBAIS
 ports = [str(50051 + i) for i in range(m)]

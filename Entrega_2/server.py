@@ -11,7 +11,7 @@ import numpy as np
 import threading
 import glob, os
 #NÚMEROS DE SERVIDORES
-m = 3
+m = 4
 
 #VARIÁVEIS GLOBAIS
 ports = [str(50051 + i) for i in range(m)]
@@ -28,7 +28,7 @@ stub = neonat_pb2_grpc.NeoNatStub(channel)
 
 log_name = ''
 snapshot_name = ''
-dados = dados = {'Pacientes': {}, "Procedimentos":{}, "Medico": {}}
+dados = {'Pacientes': {}, "Procedimentos":{}, "Medico": {}, "Dados a enviar" : {}}
 
 
 hashs_servidores = {}

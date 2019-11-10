@@ -11,7 +11,7 @@ import sys
  
 
 #Número de servidores
-m = 3
+m = 4
 
 #VARIÁVEIS GLOBAIS
 ip = 'localhost'
