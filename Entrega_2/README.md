@@ -69,7 +69,7 @@ O servidor possui algumas threads:
 - O estado do servidor é mantido devido aos arquivos de logs e snapshots implementado;
 - Script simulando vários clientes mandando requisições aos servidores;
 
-## Instalações e execução do *Sistems Neonat*
+## Instalações e execução do *Sistema Neonat*
 
 1. Instalação do python: Estes passos são somente para quem usa Linux. Caso use Windows/MAC OS consulte o site do [Python Downloads](https://www.python.org/downloads/). Abra o terminal de comando e siga os passos abaixo:
     - Instalar os pacotes necessários para instalar o python:
