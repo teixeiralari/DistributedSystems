@@ -95,7 +95,7 @@ público.
     
     - Para executar o servidor, digite:
         ```
-        $ cd Entrega1/
+        $ cd Entrega_1/
         $ python server.py
         ```
     - Antes de executar o cliente, no arquivo *client.py*, substitua a variável *host* pelo endereço IP do servidor. Após iniciado o servidor, utilize o comando para a execução do cliente:
