@@ -10,10 +10,10 @@ import datetime
 import numpy as np
 import threading
 import glob, os
-#NÚMEROS DE SERVIDORES
+#NUMEROS DE SERVIDORES
 m = 4
 
-#VARIÁVEIS GLOBAIS
+#VARIAVEIS GLOBAIS
 ports = [str(50051 + i) for i in range(m)]
 myport = ''
 succesor_port = ''
@@ -1430,6 +1430,7 @@ def run_server():
     #Encontrar um endereço livre para se conectar
     for i in ports_perm:
         if not is_port_in_use(int(i)):
+            print(i)
             server.add_insecure_port('[::]:' + i)
             server.start()
             break

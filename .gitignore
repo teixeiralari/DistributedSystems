@@ -1,6 +1,10 @@
-ReverseShell/
-Entrega_2/test.py
-Entrega_2/command
 __pycache__/
-_server.py
 SRV0*/
+Entrega_2/command
+Entrega_2/test.py
+Entrega_3/client/neonat_pb2*
+Entrega_3/server/neonat_pb2*
+Entrega_3/server/zatt
+Entrega_3/server/commands_docker
+Entrega_3/server/run_zatt_servers.sh
+Entrega_3/protofile/neonat_pb2*

@@ -1,0 +1,93 @@
+syntax = "proto3";
+
+message Patients {
+    string idPatient = 1;
+    string nameRN = 2;
+    string motherRN = 3;
+    string birth = 4;
+    enum Sex{
+                UNKNOWN = 0;
+                FEMALE = 1;
+                MALE = 2;
+            }
+         
+    Sex sex = 6;
+    int32 age = 8;
+    Doctors doctor = 14;
+}
+
+message Doctors{
+    string name = 1;
+    string CRM = 2;
+    string birth = 3;
+}
+
+message Procedure{
+    string idPatient = 1;
+    string idProcedure = 2;
+    string description = 3;
+    string date = 4;
+}
+
+message Response{
+    string response = 1;
+}
+
+message SetPatient {
+    Patients patient = 1;
+}
+
+
+message GetPatient{
+    string idPatient = 1;
+}
+
+message GetPatientResponse{
+    Patients patient = 1;
+}
+
+
+message ListPatientsResponse {
+    repeated Patients patients = 1;
+}
+
+message SetDoctor{
+    Doctors doctor = 1;
+}
+
+message GetDoctor{
+    string CRM = 1;
+}
+
+message GetDoctorResponse{
+    Doctors doctor = 1;
+}
+
+message ListDoctorsResponse{
+    repeated Doctors doctors = 1;
+}
+
+message SetProcedure{
+    Procedure procedure = 1;
+}
+
+message GetProcedures{
+    repeated Procedure procedure = 1;
+}
+
+message List{}
+
+service NeoNat{
+    rpc InsertPatient(SetPatient) returns (Response) {}
+    rpc SearchPatient(GetPatient) returns (GetPatientResponse) {}
+    rpc AllPatients(List) returns (ListPatientsResponse) {}
+    rpc DeletePatient(GetPatient) returns (Response) {}
+
+    rpc InsertProcedure(SetProcedure) returns (Response) {}
+    rpc SearchProcedure(Procedure) returns (GetProcedures) {}
+
+    rpc InsertDoctor(SetDoctor) returns (Response) {}
+    rpc SearchDoctor(GetDoctor) returns (GetDoctorResponse) {}
+    rpc AllDoctors(List) returns (ListDoctorsResponse) {}
+    //rpc AllPatientsDoctor(GetDoctor) returns (ListPatientsResponse) {}
+}
